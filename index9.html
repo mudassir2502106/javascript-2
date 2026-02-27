@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+javascript practise
+        </title>
+    </head>
+    <body>
+        <h1>sessionStorage</h1>
+        <h1 id="counter"></h1>
+<script>
+let count = sessionStorage.getItem("reloadCount");
+
+if (!count) {
+    count = 0;
+}
+
+count++;
+sessionStorage.setItem("reloadCount", count);
+
+document.getElementById("counter").innerText = 
+    "Page Reload Count: " + count;
+</script>
+            
+        </script>
+    </body>
+</html>

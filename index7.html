@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>
+javascript practise
+        </title>
+    </head>
+    <body>
+        <h1>Async/Await</h1>
+        <script>
+async function fetchData() {
+    try {
+        const loginMsg = await login();
+        console.log(loginMsg);
+
+        const profile = await getProfile();
+        console.log(profile);
+    } catch (error) {
+        console.log("Error:", error);
+    }
+}
+
+fetchData();
+            
+        </script>
+    </body>
+</html>

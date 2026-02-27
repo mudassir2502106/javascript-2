@@ -1,0 +1,40 @@
+<html>
+    <head>
+        <title>
+javascript practise
+        </title>
+    </head>
+    <body>
+        <h1>Error Handling</h1>
+        <script>
+function login() {
+    return new Promise((resolve) => {
+        setTimeout(() => resolve("User logged in"), 1000);
+    });
+}
+
+function getProfile() {
+    return new Promise((resolve, reject) => {
+        let error = true;
+
+        setTimeout(() => {
+            if (error) {
+                reject("Network Error!");
+            } else {
+                resolve("Profile Data");
+            }
+        }, 1000);
+    });
+}
+
+login()
+    .then(msg => {
+        console.log(msg);
+        return getProfile();
+    })
+    .then(profile => console.log(profile))
+    .catch(error => console.log("Error:", error));
+            
+        </script>
+    </body>
+</html>

@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>
+javascript practise
+        </title>
+    </head>
+    <body>
+        <h1>Promise.race()</h1>
+        <script>
+const promise1 = new Promise(resolve =>
+    setTimeout(() => resolve("Resolved in 1 second"), 1000)
+);
+
+const promise2 = new Promise(resolve =>
+    setTimeout(() => resolve("Resolved in 3 seconds"), 3000)
+);
+
+Promise.race([promise1, promise2])
+    .then(result => console.log("Winner:", result));
+            
+        </script>
+    </body>
+</html>

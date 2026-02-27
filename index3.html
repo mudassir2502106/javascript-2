@@ -1,0 +1,33 @@
+<html>
+    <head>
+        <title>
+javascript practise
+        </title>
+    </head>
+    <body>
+        <h1>Promise Chaining</h1>
+        <script>
+function getProductIDs() {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve([101, 102, 103]);
+        }, 1000);
+    });
+}
+
+function getProductDetails(id) {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            resolve({ id: id, name: "Laptop", price: 50000 });
+        }, 1000);
+    });
+}
+
+getProductIDs()
+    .then(ids => getProductDetails(ids[0]))
+    .then(product => console.log(product))
+    .catch(error => console.log(error));
+            
+        </script>
+    </body>
+</html>

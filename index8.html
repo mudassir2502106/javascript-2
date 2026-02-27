@@ -1,0 +1,27 @@
+<html>
+<head>
+    <title>File Reader Task</title>
+</head>
+<body>
+<h1>FileReader API</h1>
+<input type="file" id="inputfile">
+<pre id="output"></pre>
+
+<script>
+document.getElementById("inputfile").addEventListener("change", function(event) {
+    const file = event.target.files[0];
+
+    if (!file) return;
+
+    const reader = new FileReader();
+
+    reader.onload = function(e) {
+        document.getElementById("output").textContent = e.target.result;
+    };
+
+    reader.readAsText(file);
+});
+</script>
+
+</body>
+</html>

@@ -1,0 +1,21 @@
+<html>
+    <head>
+        <title>
+javascript practise
+        </title>
+    </head>
+    <body>
+        <h1>WebSocket</h1>
+        <input type="text" id="message">
+<button onclick="sendMessage()">Send</button>
+<script>
+const socket = new WebSocket("ws://localhost:8080");
+
+function sendMessage() {
+    const text = document.getElementById("message").value;
+    socket.send(text);
+}
+</script>
+        </script>
+    </body>
+</html>
